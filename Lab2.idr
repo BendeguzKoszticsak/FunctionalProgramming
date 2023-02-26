@@ -35,8 +35,25 @@ module Lab2
     mul Z n  =  Z
     mul (S m) n  =  plus n (mul m n)
 
-    --Task 6
+
+    -- Task 6
     factorial : Nat -> Nat
-    factorial 0 = 1
-    factorial (S m) = (S m) * (factorial (n-1))
+    factorial Z = 1
+    factorial (S n)  =  (S n) * (factorial ( n ))
+
+    -- Task 7
+
+    data Shape : Type where
+        -- circle shape with given radius:
+        Circle : (radius : Double) -> Shape
+        -- rectangle shape with given width and height:
+        Rectangle : (width : Double) -> (height : Double) -> Shape
+        -- isosceles triangle shape with given base and height:
+        IsosTriangle : (base : Double) -> (height : Double) -> Shape
+    
+    area : Shape -> Double
+    area (Circle r) = pi * r * r
+    area (Rectangle w h) = w * h
+    area (IsosTriangle b h) = 0.5 * b * h
+ 
 
